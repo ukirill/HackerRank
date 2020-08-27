@@ -18,7 +18,7 @@ func checkMagazine(magazine []string, note []string) {
 	}
 
 	for _, w := range note {
-		if r, ok := m[w]; !ok && r == 0 {
+		if r, ok := m[w]; !ok || r == 0 {
 			fmt.Print("No")
 			return
 		}
@@ -29,7 +29,7 @@ func checkMagazine(magazine []string, note []string) {
 }
 
 func main() {
-	reader := bufio.NewReaderSize(os.Stdin, 1024 * 1024)
+	reader := bufio.NewReaderSize(os.Stdin, 1024*1024)
 
 	mn := strings.Split(readLine(reader), " ")
 
